@@ -1,6 +1,7 @@
 const pageDataPath = 'https://tbwcjw.github.io/LeachUKsite/content.json'
 const getTemplatePath = (template) => `https://tbwcjw.github.io/LeachUKsite/templates/${template}.html`;
 const debug = true;
+const homeTemplate = 'home';
 
 function fetchPageData() {
     return fetch(pageDataPath)
@@ -92,7 +93,16 @@ async function renderPage(page, pageData) {
 
         rendered = replacePlaceholders(rendered, pageData[page]);
 
-        document.body.innerHTML = rendered;
+        const headContent = rendered.match(/<head[^>]*>([\s\S]*?)<\/head>/i);
+        const bodyContent = rendered.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
+
+        if (headContent) {
+            document.head.innerHTML = headContent[1];
+        }
+        if (bodyContent) {
+            document.body.innerHTML = bodyContent[1];
+        } 
+        
     } catch (error) {
         doError(error)
     }
@@ -100,9 +110,9 @@ async function renderPage(page, pageData) {
 
 function handlePageChange() {
     fetchPageData().then(pageData => {
-        const currentPage = window.location.hash.slice(1) || 'home';
+        const currentPage = window.location.hash.slice(1) || homeTemplate;
         renderPage(currentPage, pageData);
-        window.scrollTo(0, 0);
+        window.scrollTo(0, 0);                          //anchor tags for page navigation, scroll to top of page
     });
 }
 
