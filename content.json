@@ -7,8 +7,8 @@
     },
     "css": "https://tbwcjw.github.io/LeachUKsite/static/css/styles.css",
     "footer": {
-      "copyright": "2024 Christian Wiles.",
-      "licenseurl": "https://opensource.org/license/mit",
+      "copyright": "2024 tbwcjw",
+      "licenseurl": "https://github.com/tbwcjw/LeachUKsite/blob/main/LICENSE",
       "licensetitle": "MIT License"
     }
   },
