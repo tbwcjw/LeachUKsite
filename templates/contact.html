@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    {{html:head}}
+<body>
+    {{html:header}}
+    <section class="hero" role="region" aria-label="Hero Section">
+        <div class="hero-content">
+            <video autoplay muted loop class="bg" aria-label="{{background.aria}}">
+                <source src="{{background.url}}" type="{{background.type}}">
+                <!--fallback-->
+                {{background.fallback}}
+            </video>
+            <img src="{{heroheader.img}}" alt="{{heroheader.alt}}" aria-label="{{heroheader.aria}}">
+            <a href="{{from:links.Email.url}}" class="button {{from:links.Email.class}}" aria-label="{{from:links.Email.aria}}">{{from:links.Email.title}}</a>
+            <a href="{{from:links.Facebook.url}}" class="button {{from:links.Facebook.class}}" aria-label="{{from:links.Facebook.aria}}">{{from:links.Facebook.title}}</a>
+            <a href="{{from:links.Instagram.url}}" class="button {{from:links.Instagram.class}}" aria-label="from:links.Instagram.aria">{{from:links.Instagram.title}}</a>
+            
+        </div>
+    </section>
+    {{html:footer}}
+</body>
+</html>
