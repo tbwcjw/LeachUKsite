@@ -1,5 +1,5 @@
-const pageDataPath = 'https://tbwcjw.github.io/jstr_luk/content.json'
-const getTemplatePath = (template) => `https://tbwcjw.github.io/jstr_luk/templates/${template}.html`;
+const pageDataPath = 'https://tbwcjw.github.io/LeachUKsite/content.json'
+const getTemplatePath = (template) => `https://tbwcjw.github.io/LeachUKsite/templates/${template}.html`;
 const debug = true;
 
 function fetchPageData() {
